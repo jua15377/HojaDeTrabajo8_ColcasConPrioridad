@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * Clase Paciente
  * @author Jonnathan Juarez, 15377
- * @author Julio barahona, 141206
+ * @author Julio Barahona, 141206
  * @since 02/10/2016
  * @version 1.0
  */
@@ -24,7 +24,7 @@ public class Token {
         //Specifies the file name using the path module
         Path outputPath = Paths.get("pacientes.txt");
 		
-        //close not addded , termination when try action finishes
+        //Termination (of the file writtinh) will do when try actions finish
         try (BufferedWriter writer = Files.newBufferedWriter(outputPath, Charset.defaultCharset())) {
             //cicle adds numbers to the document
             for (int i = 1; i <= arrayLength; i++) {
@@ -39,13 +39,14 @@ public class Token {
             }
         }
 
-        //makes new reader object
+        //makes new reader object using the outputPath file (pacientes.txt, the characters format)
         BufferedReader reader = Files.newBufferedReader(outputPath, Charset.defaultCharset());
 
         //reader object to read line
         String input = reader.readLine();
 
-        //array called token, reades the file and makes new objects each " " (space line) it reads
+        //local array called token is created,
+		//reads the file and makes new objects each " " (space line) it reads
         String[] tokens = input.split(" ");
 
         // new integer array called numbers, size og the token lenght
