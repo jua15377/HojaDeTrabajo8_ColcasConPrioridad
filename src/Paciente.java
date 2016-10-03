@@ -6,9 +6,16 @@
  * @version 1.0
  */
 public class Paciente implements Comparable <Paciente>{
+    /*Atributos*/
     private  String nombre;
     private  String descripcion;
     private  String codigoDeEmergencia;
+    /**
+     * Constructor
+     * @param nombre	nombre
+     * @param descripcion	descripcion de la enfermedad
+     * @param codigoDeEmergencia	codigo de emergencia
+     */
     public Paciente(String nombre, String descripcion, String codigoDeEmergencia){
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -17,7 +24,7 @@ public class Paciente implements Comparable <Paciente>{
     @Override
     public  String toString(){
 
-        return this.getNombre() +","+this.getDescripcion()+","+this.getCodigoDeEmergencia();
+        return this.getNombre() +" |  "+this.getDescripcion()+" | "+this.getCodigoDeEmergencia();
     }
     @Override
     public  int compareTo(Paciente p){
