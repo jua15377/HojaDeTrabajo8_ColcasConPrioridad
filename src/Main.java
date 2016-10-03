@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 
 public class Main {
-    public static void main(String[] args) throws  IOException{
+    public static void main(String[] args) throws IOException {
         Scanner ingreso = new Scanner(System.in);
         VectorHeap<Paciente> vector = new VectorHeap<>();
         System.out.println("Bienvenido!\nSeleccione el archivo .TXT que contiene a los pacientes\n(presiona ENTER para continuar)");
@@ -34,22 +34,22 @@ public class Main {
                 BufferedReader file = new BufferedReader(new InputStreamReader(directorio));
 
                 String strLine;
-                while ((strLine = file.readLine()) != null){
+                while ((strLine = file.readLine()) != null) {
                     String[] temp = strLine.split(", ");
                     String nombre = temp[0];
                     String descrip = temp[1];
                     String code = temp[2];
-                    vector.add(new Paciente(nombre,descrip,code));
+                    vector.add(new Paciente(nombre, descrip, code));
                 }
                 file.close();
-            }
-            catch (FileNotFoundException e){
+            } catch (FileNotFoundException e) {
                 System.out.println("Archivo Incorrecto!!");
             }
         }
         System.out.println("El orden para atender a los pacientes es:");
         System.out.println("NOMBRE        DESCRIPCION       ERcode");
-        while (!vector.isEmpty()){
+        while (!vector.isEmpty()) {
             System.out.println(vector.remove().toString());
         }
     }
+}
