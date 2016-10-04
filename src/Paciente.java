@@ -21,6 +21,10 @@ public class Paciente implements Comparable <Paciente>{
         this.descripcion = descripcion;
         this.codigoDeEmergencia = codigoDeEmergencia;
     }
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+    */
+
     @Override
     public  String toString(){
 
